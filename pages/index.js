@@ -19,8 +19,13 @@ export default function Home() {
                     {!!user && <Link href="/api/auth/logout">Logout</Link>}
                     {!user && (
                         <>
-                            <Link href="/api/auth/login" className="btn">Login</Link>
-                            <Link href="/api/auth/signup" className="btn">Signup</Link>
+                            <h1>ChatBob</h1>
+                            <Link href="/api/auth/login" className="btn">
+                                Login
+                            </Link>
+                            <Link href="/api/auth/signup" className="btn">
+                                Signup
+                            </Link>
                         </>
                     )}
                 </div>
@@ -31,15 +36,15 @@ export default function Home() {
 
 export const getServerSideProps = async (ctx) => {
     const session = await getSession(ctx.req, ctx.res);
-    if(!!session){
+    if (!!session) {
         return {
             redirect: {
-                destination: "/chat"
-            }
-        }
+                destination: "/chat",
+            },
+        };
     }
 
     return {
-        props: {}
-    }
+        props: {},
+    };
 };
