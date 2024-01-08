@@ -107,7 +107,7 @@ export default function ChatPage({ chatId, title, messages = [] }) {
 
                 {/** Separar abaixo em um componente */}
                 <div className="flex flex-col overflow-hidden bg-gray-700">
-                    <div className="flex flex-1 flex-col-reverse overflow-scroll text-white">
+                    <div className="flex flex-1 flex-col-reverse overflow-scroll overflow-x-hidden text-white">
                         {!allMessages.length && !incomingMessage && (
                             <div className="m-auto flex items-center justify-center text-center">
                                 <div>
